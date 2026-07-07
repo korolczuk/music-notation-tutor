@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zagraj z Nut - Aplikacja dla Dzieci</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- VexFlow CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Zagraj z Nut! 🎵</h1>
+            <p>Wybierz opcje, wylosuj nutki i spróbuj je zagrać na instrumencie!</p>
+        </header>
+
+        <div class="canvas-wrapper">
+            <div id="vexflow-output"></div>
+            <!-- Tutaj będą pojawiać się nazwy nut w formie podpowiedzi -->
+            <div id="hints-output" class="hidden"></div>
+        </div>
+
+        <button id="generate-btn" class="primary-btn">🎵 Losuj Nuty! 🎵</button>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>Klucz</h3>
+                <div class="radio-group">
+                    <input type="radio" id="clef-treble" name="clef" value="treble" checked>
+                    <label for="clef-treble">Wiolinowy</label>
+                    
+                    <input type="radio" id="clef-bass" name="clef" value="bass">
+                    <label for="clef-bass">Basowy</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Tryb Gry</h3>
+                <div class="radio-group">
+                    <input type="radio" id="mode-single" name="mode" value="single" checked>
+                    <label for="mode-single">Pojedyncze nuty</label>
+                    
+                    <input type="radio" id="mode-sequence" name="mode" value="sequence">
+                    <label for="mode-sequence">Cała linia (Melodia)</label>
+
+                    <input type="radio" id="mode-rhythm" name="mode" value="rhythm">
+                    <label for="mode-rhythm">Rytmy (wysokość f1)</label>
+                </div>
+            </div>
+
+            <div class="control-group" id="metrum-group">
+                <h3>Metrum</h3>
+                <div class="select-group">
+                    <select id="time-signature" class="custom-select">
+                        <option value="4/4">4/4</option>
+                        <option value="3/4">3/4</option>
+                        <option value="2/4">2/4</option>
+                        <option value="C">C (4/4)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Opcje dodatkowe</h3>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="accidentals-toggle">
+                    <label for="accidentals-toggle">Znaki przygodne (♭, ♯)</label>
+                </div>
+                <div class="toggle-switch" style="margin-top: 10px;">
+                    <input type="checkbox" id="rests-toggle">
+                    <label for="rests-toggle">Używaj pauz</label>
+                </div>
+                <div class="toggle-switch" style="margin-top: 10px;">
+                    <input type="checkbox" id="dots-toggle">
+                    <label for="dots-toggle">Nuty z kropką</label>
+                </div>
+                <div class="toggle-switch" style="margin-top: 10px;">
+                    <input type="checkbox" id="hint-toggle">
+                    <label for="hint-toggle">Pokaż nazwy nut</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Jakie wartości?</h3>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="val-w" value="w" checked>
+                        <label for="val-w">Całe nuty</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="val-h" value="h" checked>
+                        <label for="val-h">Półnuty</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="val-q" value="q" checked>
+                        <label for="val-q">Ćwierćnuty</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="val-8" value="8">
+                        <label for="val-8">Ósemki</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

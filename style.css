@@ -1,0 +1,263 @@
+:root {
+    --bg-color: #f0f8ff;
+    --card-bg: #ffffff;
+    --primary-color: #ff6b6b;
+    --primary-hover: #ff5252;
+    --secondary-color: #4ecdc4;
+    --text-color: #2d3436;
+    --hint-color: #feca57;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(#4ecdc433 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.app-container {
+    background-color: var(--card-bg);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid white;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--primary-color);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0px #ffeaa7;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #636e72;
+    font-weight: 600;
+}
+
+.controls-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 16px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border: 2px dashed #b2bec3;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-width: 200px;
+}
+
+.control-group h3 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+/* Custom Radios and Checkboxes */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border: 2px solid #dfe6e9;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(78, 205, 196, 0.4);
+}
+
+label:hover {
+    background-color: #f1f2f6;
+}
+
+input[type="radio"]:checked + label:hover,
+input[type="checkbox"]:checked + label:hover {
+    background-color: #45b7af;
+}
+
+/* Toggle Switch specific styling */
+.toggle-switch label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    border: 2px solid #dfe6e9;
+    color: var(--text-color);
+}
+
+.toggle-switch input[type="checkbox"]:checked + label {
+    background-color: var(--hint-color);
+    border-color: var(--hint-color);
+    color: #2d3436;
+    box-shadow: 0 4px 10px rgba(254, 202, 87, 0.4);
+}
+
+.primary-btn {
+    font-family: 'Fredoka One', cursive;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 0 #d63031, 0 15px 20px rgba(214, 48, 49, 0.4);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.primary-btn:active {
+    transform: translateY(8px);
+    box-shadow: 0 0px 0 #d63031, 0 5px 10px rgba(214, 48, 49, 0.4);
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.canvas-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    min-height: 350px;
+    margin-bottom: 2rem;
+}
+
+#vexflow-output {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    /* Dodajemy padding na górze, by uniknąć ucięcia klucza */
+    padding-top: 10px;
+}
+
+/* Custom Select Styling */
+.select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.custom-select {
+    padding: 0.5rem 1rem;
+    border: 2px solid #dfe6e9;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.custom-select:hover, .custom-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(78, 205, 196, 0.2);
+}
+
+#hints-output {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 40px;
+}
+
+#hints-output.hidden {
+    visibility: hidden;
+}
+
+.hint-box {
+    background-color: var(--hint-color);
+    color: #2d3436;
+    font-weight: 800;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 0 #e1b12c;
+    font-family: 'Fredoka One', cursive;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .controls-panel {
+        flex-direction: column;
+        align-items: center;
+    }
+    .app-container {
+        padding: 1.5rem;
+    }
+}
